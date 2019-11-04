@@ -1,4 +1,8 @@
-<%= render partial: 'products/product',
-           collection: @products,
-           locals: { name_is_link: true} %>
+<h3 class="title">All Products</h3>
+
+<div class="columns">
+  <%= render partial: 'products/product',
+             collection: @products,
+             locals: { name_is_link: true} %>
+</div>
 

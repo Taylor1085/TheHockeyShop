@@ -12,6 +12,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <section class="section">
+      <h1 class="title"><%= link_to 'The Hockey Shop', root_path%>
+      <h2 class="subtitle">Welcome to the hockey shop!</h2>
+    </section>
+    <section class="section">
+      <%= yield %>
+    </section>
+
   </body>
 </html>
