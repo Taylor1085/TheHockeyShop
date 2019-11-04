@@ -1,6 +1,6 @@
 <h3 class="title">All Products</h3>
 
-<div class="columns">
+<div class="columns is-multiline">
   <%= render partial: 'products/product',
              collection: @products,
              locals: { name_is_link: true} %>
