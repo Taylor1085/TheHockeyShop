@@ -1,5 +1,9 @@
 <div class="prod">
-  <p><%= product.name %></p>
+  <% if name_is_link %>
+    <p><%= link_to product.name, product %></p>
+  <% else %>
+    <p><%= product.name %></p>
+  <% end %>
   <ul>
     <li>
       <strong>Description:</strong><%= product.description %>

@@ -4,37 +4,14 @@
     <title>HockeyShop</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   </head>
 
   <body>
-    <div class="header">
-      <h1>THE HOCKEY SHOP</h1>
-      <nav class="header_nav">
-        <ul>
-          <li>
-            <h1>Products</h1>
-          </li>
-          <li>
-            <h1>Categories</h1>
-          </li>
-          <li>
-            <h1>New</h1>
-          </li>
-          <li>
-            <h1>Sale</h1>
-          </li>
-          <li>
-            <h1>Contact</h1>
-          </li>
-          <li>
-            <h1>About</h1>
-          </li>
-        </ul>
-      </nav>
-    </div>
     <%= yield %>
   </body>
 </html>
