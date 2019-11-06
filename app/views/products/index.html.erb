@@ -1,5 +1,7 @@
 <h3 class="title">All Products</h3>
-
+<% @categories.each do |cat| %>
+  <%= link_to cat.name, cat %>
+<% end %>
 <div class="columns is-multiline">
   <%= render partial: 'products/product',
              collection: @products,

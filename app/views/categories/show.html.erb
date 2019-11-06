@@ -1,3 +1,15 @@
-<div class="columns">
+<div class="column is-one-third is-multiline">
+
+      <p class="title is-4 ">
   <h1><%= @category.name %></h1>
+  </p>
+
 </div>
+  <% @category.products.each do |catprod| %>
+  <div class="card prod">
+  <div class="card-content">
+  <h1><%= link_to catprod.name, catprod %></h1>
+  </div>
+  </div>
+  <% end %>
+
