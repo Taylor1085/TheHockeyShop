@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   # get 'products/show'
   root to: 'products#index'
 
-  resources :products, only: %i[index show]
-  resources :categories, only: [:show] do
+  resources :products, only: %i[index show] do
     collection do
       get 'search_results'
     end
   end
+  resources :categories, only: [:show]
 end

@@ -11,8 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  #GET /products/search_results
+  # GET /products/search_results
   def search_results
-
+    @query = params[:query]
+    @products = Product.where(name: @query)
   end
 end

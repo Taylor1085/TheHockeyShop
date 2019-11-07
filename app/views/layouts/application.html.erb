@@ -16,6 +16,12 @@
       <h1 class="title is-1"><%= link_to 'The Hockey Shop', root_path%>
       <h2 class="subtitle"></h2>
     </section>
+
+  <%= form_with(url: search_results_products_path, method: "get", local: true) do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+  <% end %>
     <section class="section">
       <%= yield %>
     </section>

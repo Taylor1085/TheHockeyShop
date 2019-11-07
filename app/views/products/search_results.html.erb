@@ -1,1 +1,8 @@
 Search results go here
+<p> Your search for '<%= @query %>' returned <%= pluralize(@products.size, 'result') %></p>
+
+<div class="columns is-multiline">
+  <%= render partial: 'product',
+             collection: @products,
+             locals: { name_is_link: true} %>
+</div>
