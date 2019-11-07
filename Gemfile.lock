@@ -278,6 +278,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   jbuilder (~> 2.7)
+  kaminari
   puma (~> 3.11)
   rails (~> 6.0.0)
   sass-rails (~> 5)

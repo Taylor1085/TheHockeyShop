@@ -2,6 +2,9 @@
 <% @categories.each do |cat| %>
   <%= link_to cat.name, cat %>
 <% end %>
+<div class="pages">
+    <%= paginate @products, window: 2 %>
+</div>
 <div class="columns is-multiline">
   <%= render partial: 'products/product',
              collection: @products,
