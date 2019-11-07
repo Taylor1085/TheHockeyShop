@@ -1,9 +1,13 @@
 <h3 class="title">All Products</h3>
+
 <% @categories.each do |cat| %>
-  <%= link_to cat.name, cat %>
+  <div class="button is-dark">
+    <%= link_to cat.name, cat %>
+  </div>
 <% end %>
-<div class="pages">
-    <%= paginate @products, window: 2 %>
+<br>
+<div class="button is-light">
+  <%= paginate @products %>
 </div>
 <div class="columns is-multiline">
   <%= render partial: 'products/product',
