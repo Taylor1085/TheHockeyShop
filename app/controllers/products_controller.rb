@@ -14,6 +14,6 @@ class ProductsController < ApplicationController
   # GET /products/search_results
   def search_results
     @query = params[:query]
-    @products = Product.where(name: @query)
+    @products = Product.where('name LIKE ?', "%#{@query}%")
   end
 end
