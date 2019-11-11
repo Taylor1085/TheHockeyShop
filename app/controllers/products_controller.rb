@@ -14,6 +14,13 @@ class ProductsController < ApplicationController
   # GET /products/search_results
   def search_results
     @query = params[:query]
-    @products = Product.where('name LIKE ?', "%#{@query}%")
+    # @products = Product.where('name LIKE ?', "%#{@query}%")
+
+    if params[:category_id] != '10'
+      category = Category.find(params[:category_id])
+      @products = category.products.where('name LIKE ?', "%#{@query}%").order('name').page(params[:page]).per(5)
+    else
+      @products = Product.where('name LIKE ?', "%#{@query}%").order('name').page(params[:page]).per(5)
+    end
   end
 end
