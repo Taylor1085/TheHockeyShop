@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   resources :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -13,8 +12,11 @@ Rails.application.routes.draw do
       get 'search_results'
     end
   end
+
+  resources :carts, only: [:show]
+  resources :order_items
   resources :users
-  resources :sessions, onlt: [:new, :create, :destroy]
+  resources :sessions, onlt: %i[new create destroy]
   resources :pages, only: [:show]
   resources :categories, only: [:show]
   resources :about, only: [:index]
