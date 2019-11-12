@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'about/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # get 'categories/show'
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
       get 'search_results'
     end
   end
+  resources :pages, only: [:show]
   resources :categories, only: [:show]
   resources :about, only: [:index]
 end

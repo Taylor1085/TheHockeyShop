@@ -15,14 +15,18 @@
     <section class="section">
       <h1 class="title is-1"><%= link_to 'The Hockey Shop', root_path%>
       <h2 class="subtitle"></h2>
-      <h2 class="button"><%= link_to 'About Us', about_index_path %></h2>
+      <div class="page-buttons">
+        <h2 class="button"><%= link_to 'About Us', 'pages/1' %></h2>
+        <h2 class="button"><%= link_to 'Contact Us', 'pages/2' %></h2>
+      </div>
     </section>
-
-  <%= form_with(url: search_results_products_path, method: "get", local: true) do %>
-  <%= label_tag(:q, "Search for Products:") %>
-  <%= text_field_tag(:query) %>
-  <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name", '10'), html: {selected: true} %>
-  <%= submit_tag("Search") %>
+  <div class="main-search-layout">
+    <%= form_with(url: search_results_products_path, method: "get", local: true) do %>
+    <%= label_tag(:q, "Search:") %>
+    <%= text_field_tag(:query) %>
+    <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "name", '10'), html: {selected: true} %>
+    <%= submit_tag("Search") %>
+  </div>
 <% end %>
     <section class="section">
       <%= yield %>
